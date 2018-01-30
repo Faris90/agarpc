@@ -481,7 +481,7 @@ io.on('connection', function (socket) {
                                     users[totusers[e2]].customspeed = 15;
                                     worked = true;
                                     break;
-                                //ParfittSpeed
+                                //ParfittPace
                                 case '2.2':
                                     users[totusers[e2]].customspeed = 0.001;
                                     worked = true;
