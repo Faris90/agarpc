@@ -5,7 +5,7 @@
 }
 
 html, body {
-    background-image: url("../img/bg.png");
+    background-image: url("../img/bg2.png");
     overflow:hidden;
 }
 
@@ -182,7 +182,7 @@ div {
 }
 
 #playerNameInput {
-    width: 100%;
+    width: 60%;
     text-align: left;
     padding: 17px 12px;
     border: 1px solid #333;
@@ -194,6 +194,18 @@ div {
     color: #ccc;
     background:#222;
     box-sizing:border-box;
+    vertical-align:middle;
+}
+select{
+    width:35%;
+    margin-left:10px;
+    background:#222;
+    color: #888;
+    border: 1px solid #333;
+    border-radius: 4px;
+    height:36px;
+    vertical-align:middle;
+    padding-left:8px;
 }
 
 #playerNameInput:focus, #playerNameInput.focus, #gamemode:focus, #gamemode.focus {
@@ -211,7 +223,7 @@ div {
     color: #357ebd;
     text-align: center;
     background:transparent;
-    border: 1px solid #357ebd;
+    border: 2px solid #357ebd;
     cursor: pointer;
     border-radius: 4px;
     transition:0.3s all;
@@ -226,7 +238,7 @@ div {
 
 #skinsButton{
     background-color: transparent;
-    border: 1px solid #46b8da;
+    border: 2px solid #46b8da;
     color:#46b8da;
 }
 

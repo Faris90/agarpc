@@ -43,6 +43,12 @@
         <div id="startMenu">
             <p>agar5 <b>.ml</b></p>
             <input type="text" tabindex="0" autofocus placeholder="Nick" id="playerNameInput" maxlength="25" />
+
+            <select id="server" onchange="window.location.href='http://'+document.getElementById('server').value+'.ml'" required="">
+                <option value="agar5">Server #0</option>
+                <option value="1.agar5">Server #1</option>
+            </select>
+
             <b class="input-error">Nick must be alphanumeric characters only!</b>
             <br />
             <a><button id="startButton">Play</button></a>
@@ -59,8 +65,8 @@
             </div>
             <div id="instructions">
                 <ul>
-                    <li style="color:red;font-weight:bold;font-size:17px;margin-bottom:5px;">New update!</li>
-                    <li style="font-size:12px;"><b>The eating glitch is officially fixed</b>, also there are more admin commands now, and there's also this whole new dark UI!</li>
+                    <li style="color:rgb(81, 120, 192);font-size:17px;margin-bottom:5px;">31 Jan: <b style="font-size:17px;">New update!</b></li>
+                    <li style="font-size:12px;"><b>Servers are now out</b>, still work in progress as there are only 2 servers at the moment.</li>
                     <!--<li><small style="font-size:9px !important">user id: <span id="userid" style="font-size:9px !important"></span></small></li>-->
                 </ul>
                 <hr>

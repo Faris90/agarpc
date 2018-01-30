@@ -7,6 +7,12 @@ var playerNameInput = document.getElementById('playerNameInput');
 var socket;
 var reason;
 
+if(window.location.host.split('.')[0] == 'agar5'){
+    document.getElementById("server").selectedIndex = 0;
+} else {
+    document.getElementById("server").selectedIndex = 1;
+}
+
 var debug = function(args) {
     if (console && console.log) {
         console.log(args);
