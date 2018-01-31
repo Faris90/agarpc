@@ -632,3 +632,35 @@ function resize() {
 
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
+
+function updateplaycount(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET', 'http://agar5.ml/online.json', true);
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4) {
+            if(xmlhttp.status == 200) {
+                var obj = JSON.parse(xmlhttp.responseText);
+                document.getElementById('server0').text = 'Server 0 | ' + obj.players + ' playing';
+            } else {
+                document.getElementById('server0').text = 'Server 0 | DOWN';
+            }
+        }
+    };
+    xmlhttp.send(null);
+
+    var xmlhttp2 = new XMLHttpRequest();
+    xmlhttp2.open('GET', 'http://1.agar5.ml/online.json', true);
+    xmlhttp2.onreadystatechange = function() {
+        if (xmlhttp2.readyState == 4) {
+            if(xmlhttp2.status == 200) {
+                var obj2 = JSON.parse(xmlhttp2.responseText);
+                document.getElementById('server1').text = 'Server 1 | ' + obj2.players + ' playing';
+            } else {
+                document.getElementById('server1').text = 'Server 1 | DOWN';
+            }
+        }
+    };
+    xmlhttp2.send(null);
+}
+updateplaycount();
+setInterval(updateplaycount, 7500);
