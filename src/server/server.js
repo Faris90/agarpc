@@ -60,7 +60,9 @@ app.use(
     express.static(__dirname + '/../client')
 );
 app.get("/online.json", function (req, res) {
-    //send "Hello World" to the client as html
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
     res.send('{ "players": '+users.length+' }');
 });
 
