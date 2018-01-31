@@ -56,7 +56,13 @@ if(s.host !== "DEFAULT") {
 
 var initMassLog = util.log(c.defaultPlayerMass, c.slowBase);
 
-app.use(express.static(__dirname + '/../client'));
+app.use(
+    express.static(__dirname + '/../client')
+);
+app.get("/online.json", function (req, res) {
+    //send "Hello World" to the client as html
+    res.send('{ "players": '+users.length+' }');
+});
 
 function addFood(toAdd) {
     var radius = util.massToRadius(c.foodMass);
