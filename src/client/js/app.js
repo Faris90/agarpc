@@ -7,10 +7,8 @@ var playerNameInput = document.getElementById('playerNameInput');
 var socket;
 var reason;
 
-if(window.location.host.split('.')[0] == 'agar5'){
-    document.getElementById("server").selectedIndex = 0;
-} else {
-    document.getElementById("server").selectedIndex = 1;
+if(window.location.host.split('.ml')[0]){
+    document.getElementById("server").value = window.location.host.split('.ml')[0];
 }
 
 var debug = function(args) {
@@ -632,7 +630,7 @@ function resize() {
 
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
-/*
+
 function updateplaycount(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open('GET', 'http://agar5.ml/online.json', true);
@@ -640,9 +638,9 @@ function updateplaycount(){
         if (xmlhttp.readyState == 4) {
             if(xmlhttp.status == 200) {
                 var obj = JSON.parse(xmlhttp.responseText);
-                document.getElementById('server0').text = 'Server 0 | ' + obj.players + ' playing';
+                document.getElementById('server0').text = 'Server 0 ▶ ' + obj.players + ' players';
             } else {
-                document.getElementById('server0').text = 'Server 0 | DOWN';
+                document.getElementById('server0').text = 'Server 0 ✘ DOWN';
             }
         }
     };
@@ -654,13 +652,27 @@ function updateplaycount(){
         if (xmlhttp2.readyState == 4) {
             if(xmlhttp2.status == 200) {
                 var obj2 = JSON.parse(xmlhttp2.responseText);
-                document.getElementById('server1').text = 'Server 1 | ' + obj2.players + ' playing';
+                document.getElementById('server1').text = 'Server 1 ▶ ' + obj2.players + ' players';
             } else {
-                document.getElementById('server1').text = 'Server 1 | DOWN';
+                document.getElementById('server1').text = 'Server 1 ✘ DOWN';
             }
         }
     };
     xmlhttp2.send(null);
+
+    var xmlhttp3 = new XMLHttpRequest();
+    xmlhttp3.open('GET', 'http://2.agar5.ml/online.json#'+Math.random(), true);
+    xmlhttp3.onreadystatechange = function() {
+        if (xmlhttp3.readyState == 4) {
+            if(xmlhttp3.status == 200) {
+                var obj3 = JSON.parse(xmlhttp3.responseText);
+                document.getElementById('server2').text = 'Server 2 ▶ ' + obj3.players + ' players';
+            } else {
+                document.getElementById('server2').text = 'Server 2 ✘ DOWN';
+            }
+        }
+    };
+    xmlhttp3.send(null);
 }
 updateplaycount();
-setInterval(updateplaycount, 7500);*/
+setInterval(updateplaycount, 7500);
