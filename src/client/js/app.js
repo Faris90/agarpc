@@ -649,7 +649,7 @@ function updateplaycount(){
     xmlhttp.send(null);
 
     var xmlhttp2 = new XMLHttpRequest();
-    xmlhttp2.open('GET', 'http://1.agar5.ml/online.json', true);
+    xmlhttp2.open('GET', 'http://1.agar5.ml/online.json#'+Math.random(), true);
     xmlhttp2.onreadystatechange = function() {
         if (xmlhttp2.readyState == 4) {
             if(xmlhttp2.status == 200) {
