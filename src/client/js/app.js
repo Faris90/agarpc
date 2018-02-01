@@ -237,7 +237,13 @@ function setupSocket(socket) {
                     status += (i + 1) + '. An unnamed cell';
             }
         }
-        status += '<hr/>Players: ' + data.players + '<br/>Mass: ' + player.massTotal;
+        if(window.location.host.split('.aga')[0].length == 1){
+            status += '<hr/><b>Server ' + window.location.host.split('.aga')[0] + '</b>';
+        } else {
+            status += '<hr/><b>Server 0</b>';
+        }
+        status += '<br/>Players: ' + data.players;
+        status += '<br/>Mass: ' + player.massTotal;
         document.getElementById('status').innerHTML = status;
     });
 

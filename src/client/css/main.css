@@ -217,7 +217,7 @@ select{
 
 #startButton, #settingsButton, #skinsButton {
     margin: auto;
-    width: 148px;
+    width: 100%;
     height: 35px;
     font-size: 14px;
     color: #357ebd;
