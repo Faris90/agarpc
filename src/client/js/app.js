@@ -633,7 +633,7 @@ function resize() {
 
 function updateplaycount(){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET', 'http://agar5.ml/online.json?'+Math.random(), true);
+    xmlhttp.open('GET', 'http://agar6.ml/online.json?'+Math.random(), true);
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
             if(xmlhttp.status == 200) {
@@ -647,7 +647,7 @@ function updateplaycount(){
     xmlhttp.send(null);
 
     var xmlhttp2 = new XMLHttpRequest();
-    xmlhttp2.open('GET', 'http://1.agar5.ml/online.json?'+Math.random(), true);
+    xmlhttp2.open('GET', 'http://1.agar6.ml/online.json?'+Math.random(), true);
     xmlhttp2.onreadystatechange = function() {
         if (xmlhttp2.readyState == 4) {
             if(xmlhttp2.status == 200) {
@@ -661,7 +661,7 @@ function updateplaycount(){
     xmlhttp2.send(null);
 
     var xmlhttp3 = new XMLHttpRequest();
-    xmlhttp3.open('GET', 'http://2.agar5.ml/online.json?'+Math.random(), true);
+    xmlhttp3.open('GET', 'http://2.agar6.ml/online.json?'+Math.random(), true);
     xmlhttp3.onreadystatechange = function() {
         if (xmlhttp3.readyState == 4) {
             if(xmlhttp3.status == 200) {

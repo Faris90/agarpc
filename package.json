@@ -1,7 +1,7 @@
 {
-  "name": "agar-clone",
+  "name": "blobgame",
   "version": "1.0.0",
-  "description": "A simple Agar.io clone",
+  "description": "A simple blobgame clone",
   "main": "server/server.js",
   "scripts": {
     "build": "gulp build",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huytd/agar.io-clone.git"
+    "url": "https://github.com/Finbae/blobgame.git"
   },
   "author": "Huy Tran",
   "license": "MIT",
