@@ -238,7 +238,7 @@ function setupSocket(socket) {
             }
         }
         if(window.location.host.split('.aga')[0].length == 1){
-            status += '<hr/><b>Server ' + window.location.host.split('.aga')[0] + '</b>';
+            status += '<hr/>- <b style="font-size: 16.1px;">Server ' + window.location.host.split('.aga')[0] + '</b> -';
         } else {
             status += '<hr/><b>Server 0</b>';
         }
