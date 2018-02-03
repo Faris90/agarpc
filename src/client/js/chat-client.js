@@ -78,6 +78,7 @@ class ChatClient {
         newline.className = 'system';
         newline.innerHTML = message;
         if(message.includes("Welcome back,")){
+            $('#chatInput').attr('maxlength','1000');
             this.isadmin = true;
         }
 

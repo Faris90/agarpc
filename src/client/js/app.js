@@ -24,6 +24,9 @@ if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 var skintest = new Image();
 skintest.src = 'skins/doge.png'; 
 
+var oofgraphic = new Image();
+oofgraphic.src = 'img/oof.png'; 
+
 function startGame(type) {
     global.toggleMassState = 1;
     global.continuity = true;
@@ -252,6 +255,20 @@ function setupSocket(socket) {
 
     socket.on('serverMSG', function (data) {
         window.chat.addSystemLine(data);
+    });
+
+    socket.on('bigMSG', function (data, userid, mtype) {
+        if(userid == player.id){
+            $('#botp').removeClass('m-rainbow');
+            if(mtype == 1){
+                $('#botp').addClass('m-rainbow');
+            }
+            $('#botp').text(data);
+            document.getElementById('msgshow').style.visibility = 'visible';
+            setTimeout(function(){
+                document.getElementById('msgshow').style.visibility = 'hidden';
+            }, 10000);
+        }
     });
 
     // Chat.
@@ -569,6 +586,7 @@ function gameLoop() {
         graph.textAlign = 'center';
         graph.fillStyle = '#CCCCCC';
         graph.font = '42px Roboto';
+        graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
         graph.fillText('You died!', global.screenWidth / 2, global.screenHeight / 2);
         window.cancelAnimationFrame(global.animLoopHandle);
     }
@@ -628,9 +646,10 @@ function gameLoop() {
             }
         }
         else {
-              graph.fillText('The server is reloading!', global.screenWidth / 2, global.screenHeight / 2 - 25);
+              graph.fillText('The server is restarting!', global.screenWidth / 2, global.screenHeight / 2 - 25);
               graph.fillText('Reload the page in a few seconds.', global.screenWidth / 2, global.screenHeight / 2 + 25);
         }
+        graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
         window.cancelAnimationFrame(global.animLoopHandle);
     }
 }
