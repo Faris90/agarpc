@@ -21,6 +21,9 @@ if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     global.mobile = true;
 }
 
+var skintest = new Image();
+skintest.src = 'skins/doge.png'; 
+
 function startGame(type) {
     global.toggleMassState = 1;
     global.continuity = true;
@@ -372,12 +375,22 @@ function drawPlayers(order) {
         var x=0;
         var y=0;
 
-        var points = 30 + ~~(cellCurrent.mass/5);
+        var points = 30;
         var increase = Math.PI * 2 / points;
 
-        graph.strokeStyle = 'hsl(' + userCurrent.hue + ', 100%, 45%)';
+        graph.strokeStyle = 'hsl(' + userCurrent.hue + ', 100%, 40%)';
         graph.fillStyle = 'hsl(' + userCurrent.hue + ', 100%, 50%)';
         graph.lineWidth = playerConfig.border;
+/*
+        var tempCanvas = document.createElement("canvas"),
+            tCtx = tempCanvas.getContext("2d");
+        tempCanvas.width = cellCurrent.radius*2;
+        tempCanvas.height = cellCurrent.radius*2;
+
+        tCtx.drawImage(skintest,0,0,skintest.width,skintest.height,0,0,cellCurrent.radius*2,cellCurrent.radius*2);
+
+        var pattern = graph.createPattern(tempCanvas, "repeat");
+        graph.fillStyle = pattern;*/
 
         var xstore = [];
         var ystore = [];
@@ -391,8 +404,8 @@ function drawPlayers(order) {
 
         for (var i = 0; i < points; i++) {
 
-            x = cellCurrent.radius * Math.cos(global.spin) + circle.x;
-            y = cellCurrent.radius * Math.sin(global.spin) + circle.y;
+            x = cellCurrent.radius * Math.cos(global.spin) + circle.x + (Math.random() * (1 - (-1)) + -1);
+            y = cellCurrent.radius * Math.sin(global.spin) + circle.y + (Math.random() * (1 - (-1)) + -1);
             if(typeof(userCurrent.id) == "undefined") {
                 x = valueInRange(-userCurrent.x + global.screenWidth / 2,
                                  global.gameWidth - userCurrent.x + global.screenWidth / 2, x);

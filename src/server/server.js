@@ -23,6 +23,10 @@ var s = c.sqlinfo;
 var memejson = require('../client/js/memejson.js');
 
 var tree = quadtree(0, 0, c.gameWidth, c.gameHeight);
+/*
+var passport = require('passport'),
+    GoogleStrategy = require('passport-google-oauth2').Strategy;
+*/
 
 var users = [];
 var massFood = [];
@@ -65,6 +69,23 @@ app.get("/online.json", function (req, res) {
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
     res.send('{ "players": '+users.length+' }');
 });
+/*
+passport.use(new GoogleStrategy({
+        clientID:     process.env.gClientID,
+        clientSecret: process.env.gClientSe,
+        callbackURL: "http://localhost:3000/oauth2callback.html",
+        passReqToCallback: true
+    },
+    function(request, accessToken, refreshToken, profile, done) {
+        console.log(profile);
+    }
+));
+
+app.get("/googlelogin.html", passport.authenticate('google', {scope: ['profile','email']}));
+app.get("/oauth2callback.html", passport.authenticate('google', { failureRedirect: '/'}),
+function(req, res) {
+    res.redirect('/');
+});*/
 
 function addFood(toAdd) {
     var radius = util.massToRadius(c.foodMass);
