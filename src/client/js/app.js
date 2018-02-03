@@ -628,7 +628,8 @@ function gameLoop() {
             }
         }
         else {
-              graph.fillText('OOF, the server crashed.', global.screenWidth / 2, global.screenHeight / 2);
+              graph.fillText('The server is reloading!', global.screenWidth / 2, global.screenHeight / 2 - 25);
+              graph.fillText('Reload the page in a few seconds.', global.screenWidth / 2, global.screenHeight / 2 + 25);
         }
         window.cancelAnimationFrame(global.animLoopHandle);
     }
