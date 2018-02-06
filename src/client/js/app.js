@@ -670,48 +670,7 @@ function resize() {
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
 
-function updateplaycount(){/*
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET', 'http://agar6.ml/online.json?'+Math.random(), true);
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4) {
-            if(xmlhttp.status == 200) {
-                var obj = JSON.parse(xmlhttp.responseText);
-                document.getElementById('server0').text = 'Server 0 ▶ ' + obj.players + ' players';
-            } else {
-                document.getElementById('server0').text = 'Server 0 ✘ DOWN';
-            }
-        }
-    };
-    xmlhttp.send(null);
-
-    var xmlhttp2 = new XMLHttpRequest();
-    xmlhttp2.open('GET', 'http://1.agar6.ml/online.json?'+Math.random(), true);
-    xmlhttp2.onreadystatechange = function() {
-        if (xmlhttp2.readyState == 4) {
-            if(xmlhttp2.status == 200) {
-                var obj2 = JSON.parse(xmlhttp2.responseText);
-                document.getElementById('server1').text = 'Server 1 ▶ ' + obj2.players + ' players';
-            } else {
-                document.getElementById('server1').text = 'Server 1 ✘ DOWN';
-            }
-        }
-    };
-    xmlhttp2.send(null);
-
-    var xmlhttp3 = new XMLHttpRequest();
-    xmlhttp3.open('GET', 'http://2.agar6.ml/online.json?'+Math.random(), true);
-    xmlhttp3.onreadystatechange = function() {
-        if (xmlhttp3.readyState == 4) {
-            if(xmlhttp3.status == 200) {
-                var obj3 = JSON.parse(xmlhttp3.responseText);
-                document.getElementById('server2').text = 'Server 2 ▶ ' + obj3.players + ' players';
-            } else {
-                document.getElementById('server2').text = 'Server 2 ✘ DOWN';
-            }
-        }
-    };
-    xmlhttp3.send(null);*/
+function updateplaycount(){
 }
 updateplaycount();
 setInterval(updateplaycount, 7500);
