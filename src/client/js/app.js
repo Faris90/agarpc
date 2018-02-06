@@ -670,7 +670,7 @@ function resize() {
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
 
-function updateplaycount(){
+function updateplaycount(){/*
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open('GET', 'http://agar6.ml/online.json?'+Math.random(), true);
     xmlhttp.onreadystatechange = function() {
@@ -711,7 +711,7 @@ function updateplaycount(){
             }
         }
     };
-    xmlhttp3.send(null);
+    xmlhttp3.send(null);*/
 }
 updateplaycount();
 setInterval(updateplaycount, 7500);
