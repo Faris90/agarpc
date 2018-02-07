@@ -26,7 +26,7 @@ function getDomain(){
 }
 var cdomain = getDomain();
 
-if(window.location.host.split('.a')[0]){
+if(window.location.host.split('.a')[0].length == 1){
     document.getElementById("server").value = window.location.host.split('.a')[0];
 } else {
     document.getElementById("server").value = '0';
