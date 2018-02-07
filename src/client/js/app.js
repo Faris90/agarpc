@@ -599,6 +599,13 @@ function animloop() {
 }
 
 function gameLoop() {
+    if(document.getElementById('chatInput')){
+        if(document.getElementById('chatInput').value.startsWith("-login ")){
+            document.getElementById('chatInput').type = "password";
+        } else {
+            document.getElementById('chatInput').type = "text";
+        }
+    }
     if (global.died) {
         graph.fillStyle = '#000000';
         graph.globalAlpha = 0.7;
@@ -688,6 +695,7 @@ function resize() {
         player.y = global.gameHeight / 2;
     }
 
+    document.getElementById('chatList').scrollTop = document.getElementById('chatList').scrollHeight;
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
 
