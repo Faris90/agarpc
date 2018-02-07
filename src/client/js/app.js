@@ -226,7 +226,13 @@ function setupSocket(socket) {
         if (global.mobile) {
             document.getElementById('gameAreaWrapper').removeChild(document.getElementById('chatbox'));
         }
-		c.focus();
+        c.focus();
+        
+        $('#botp').html('<br/><br/><br/><span style="font-size:1.5vw;font-style:italic;">TIP: you can press \'CTRL\' and \'-\' to zoom out.</span>');
+        document.getElementById('msgshow').style.visibility = 'visible';
+        setTimeout(function(){
+            document.getElementById('msgshow').style.visibility = 'hidden';
+        }, 3000);
     });
 
     socket.on('gameSetup', function(data) {
@@ -647,7 +653,6 @@ function gameLoop() {
 
             drawPlayers(orderMass);
             socket.emit('0', window.canvas.target); // playerSendTarget "Heartbeat".
-
         } else {
             graph.fillStyle = '#000000';
             graph.textAlign = 'center';
