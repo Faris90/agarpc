@@ -28,6 +28,8 @@ var cdomain = getDomain();
 
 if(window.location.host.split('.a')[0]){
     document.getElementById("server").value = window.location.host.split('.a')[0];
+} else {
+    document.getElementById("server").value = '0';
 }
 
 var debug = function(args) {
@@ -690,7 +692,11 @@ function resize() {
 }
 
 document.getElementById('server').onchange = function(){
-    window.location = 'http://' + document.getElementById('server').value + '.' + cdomain;
+    if(document.getElementById('server').value == '0'){
+        window.location = 'http://' + cdomain;
+    } else {
+        window.location = 'http://' + document.getElementById('server').value + '.' + cdomain;
+    }
 };
 
 function updateplaycount(){
