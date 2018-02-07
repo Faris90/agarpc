@@ -265,9 +265,9 @@ function setupSocket(socket) {
             }
         }
         if(window.location.host.split('.aga')[0].length == 1){
-            status += '<hr/>- <b style="font-size: 16.1px;">Server ' + window.location.host.split('.aga')[0] + '</b> -';
+            status += '<hr/><b style="font-size: 1.2vw;">Server ' + window.location.host.split('.aga')[0] + '</b>';
         } else {
-            status += '<hr/>- <b style="font-size: 16.1px;">Server 0</b> -';
+            status += '<hr/><b style="font-size: 1.2vw;">Server 0</b>';
         }
         status += '<br/>Players: ' + data.players;
         status += '<br/>Mass: ' + player.massTotal;

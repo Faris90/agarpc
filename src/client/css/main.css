@@ -47,22 +47,22 @@ div {
 
 #status {
     position: absolute;
-    padding: 10px;
+    padding: 0.7vw;
     background:rgba(35, 35, 35, 0.7);
     color: #ccc;
-    font-size: 16.1px;
-    top: 10px;
-    right: 10px;
+    font-size: 1.1vw;
+    top: 0.5vw;
+    right: 0.5vw;
     text-align: center;
 }
 
 #status .title {
-    font-size: 25px;
+    font-size: 1.7vw;
 }
 
 #status .me {
     color: #FF8888;
-    font-size: 16.1px;
+    font-size: 1.1vw;
 }
 
 .chatbox {
