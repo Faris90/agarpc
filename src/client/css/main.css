@@ -67,12 +67,11 @@ div {
 
 .chatbox {
     position: absolute;
-    width: 300px;
-    height: 320px;
+    width: 18vw;
+    height: 21vw;
     background:rgba(35, 35, 35, 0.7);
-    bottom: 5px;
-    left: 5px;
-    border-radius: 5px;
+    bottom: 0.8vw;
+    left: 0.5vw;
     pointer-events: none;
     overflow-y:scroll;
     overflow-x:hidden !important;
@@ -85,19 +84,19 @@ div {
 }
 
 .chatbox .chat-list {
-    padding: 5px;
+    padding: 0.2vw;
     margin: 0;
     list-style: none;
     box-sizing: border-box;
-    height: 285px;
+    height: 18.7vw;
     overflow-y:scroll !important;
     overflow-x:hidden !important;
     color:#ccc;
 }
 
 .chatbox .chat-list li {
-    padding: 2px;
-    margin: 3px;
+    padding: 0.2vw;
+    margin: 0.2vw;
 }
 
 .chatbox .chat-list li.me b {
@@ -120,10 +119,10 @@ div {
     pointer-events: all;
     box-sizing: border-box;
     width: 100%;
-    padding: 8px;
+    padding: 0.5vw;
     background: transparent;
     border: none;
-    border-top: 1px solid #444;
+    border-top: 0.05vw solid #444;
     outline: none;
     color:#ccc;
 }
@@ -315,7 +314,8 @@ select{
 
 hr{
     border:0;
-    border-top:0.05vw solid #666;
+    border-top:0.5vw solid #666;
+    height:0.05vw;
 }
 
 @media only screen  and (min-width : 1224px) {
