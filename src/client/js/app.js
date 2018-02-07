@@ -7,8 +7,27 @@ var playerNameInput = document.getElementById('playerNameInput');
 var socket;
 var reason;
 
-if(window.location.host.split('.ml')[0]){
-    document.getElementById("server").value = window.location.host.split('.ml')[0];
+function getDomain(){
+    if(document.domain.length){
+        var parts = document.domain.replace(/^(www\.)/,"").split('.');
+
+        //is there a subdomain? 
+        while(parts.length > 2){
+            //removing it from our array 
+            var subdomain = parts.shift();
+        }
+
+        //getting the remaining 2 elements
+        var domain = parts.join('.');
+
+        return domain.replace(/(^\.*)|(\.*$)/g, "");
+    }
+    return '';
+}
+var cdomain = getDomain();
+
+if(window.location.host.split('.a')[0]){
+    document.getElementById("server").value = window.location.host.split('.a')[0];
 }
 
 var debug = function(args) {
@@ -670,7 +689,54 @@ function resize() {
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
 
+document.getElementById('server').onchange = function(){
+    window.location = 'http://' + document.getElementById('server').value + '.' + cdomain;
+};
+
 function updateplaycount(){
+    if(cdomain){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET', 'http://'+cdomain+'/online.json?'+Math.random(), true);
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4) {
+                if(xmlhttp.status == 200) {
+                    var obj = JSON.parse(xmlhttp.responseText);
+                    document.getElementById('server0').text = 'Server 0 ▶ ' + obj.players + ' players';
+                } else {
+                    document.getElementById('server0').text = 'Server 0 ✘ DOWN';
+                }
+            }
+        };
+        xmlhttp.send(null);
+    
+        var xmlhttp2 = new XMLHttpRequest();
+        xmlhttp2.open('GET', 'http://1.'+cdomain+'/online.json?'+Math.random(), true);
+        xmlhttp2.onreadystatechange = function() {
+            if (xmlhttp2.readyState == 4) {
+                if(xmlhttp2.status == 200) {
+                    var obj2 = JSON.parse(xmlhttp2.responseText);
+                    document.getElementById('server1').text = 'Server 1 ▶ ' + obj2.players + ' players';
+                } else {
+                    document.getElementById('server1').text = 'Server 1 ✘ DOWN';
+                }
+            }
+        };
+        xmlhttp2.send(null);
+    
+        var xmlhttp3 = new XMLHttpRequest();
+        xmlhttp3.open('GET', 'http://2.'+cdomain+'/online.json?'+Math.random(), true);
+        xmlhttp3.onreadystatechange = function() {
+            if (xmlhttp3.readyState == 4) {
+                if(xmlhttp3.status == 200) {
+                    var obj3 = JSON.parse(xmlhttp3.responseText);
+                    document.getElementById('server2').text = 'Server 2 ▶ ' + obj3.players + ' players';
+                } else {
+                    document.getElementById('server2').text = 'Server 2 ✘ DOWN';
+                }
+            }
+        };
+        xmlhttp3.send(null);
+    }
 }
 updateplaycount();
 setInterval(updateplaycount, 7500);
