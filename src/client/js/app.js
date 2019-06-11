@@ -626,12 +626,14 @@ function gameLoop() {
         graph.font = '42px Roboto';
         graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
         graph.fillText('You died!', global.screenWidth / 2, global.screenHeight / 2);
+        document.getElementById('chatbox').style.display = 'none';
         window.cancelAnimationFrame(global.animLoopHandle);
     }
     else if (!global.disconnected) {
         if (global.gameStart) {
             graph.fillStyle = global.backgroundColor;
             graph.fillRect(0, 0, global.screenWidth, global.screenHeight);
+            document.getElementById('chatbox').style.display = 'block';
 
             drawgrid();
             foods.forEach(drawFood);
@@ -658,11 +660,14 @@ function gameLoop() {
             drawPlayers(orderMass);
             socket.emit('0', window.canvas.target); // playerSendTarget "Heartbeat".
         } else {
+            /*
             graph.fillStyle = '#000000';
             graph.textAlign = 'center';
             graph.fillStyle = '#CCCCCC';
             graph.font = '42px Roboto';
             graph.fillText('Loading...', global.screenWidth / 2, global.screenHeight / 2);
+            */
+            document.getElementById('chatbox').style.display = 'none';
         }
     } else {
         graph.fillStyle = '#000000';
@@ -673,6 +678,7 @@ function gameLoop() {
         graph.textAlign = 'center';
         graph.fillStyle = '#CCCCCC';
         graph.font = '42px Roboto';
+        document.getElementById('chatbox').style.display = 'none';
         if (global.kicked) {
             if (reason !== '') {
                 graph.fillText('You were kicked for:', global.screenWidth / 2, global.screenHeight / 2 - 25);
@@ -686,7 +692,7 @@ function gameLoop() {
               graph.fillText('The server is restarting!', global.screenWidth / 2, global.screenHeight / 2 - 25);
               graph.fillText('Reload the page in a few seconds.', global.screenWidth / 2, global.screenHeight / 2 + 25);
         }
-        graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
+        //graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
         window.cancelAnimationFrame(global.animLoopHandle);
     }
 }
