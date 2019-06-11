@@ -73,7 +73,7 @@ div {
     bottom: 0.8vw;
     left: 0.5vw;
     pointer-events: none;
-    overflow-y:scroll;
+    overflow-y:hidden;
     overflow-x:hidden !important;
 }
 
@@ -89,7 +89,7 @@ div {
     list-style: none;
     box-sizing: border-box;
     height: 18.7vw;
-    overflow-y:scroll !important;
+    overflow-y:hidden !important;
     overflow-x:hidden !important;
     color:#ccc;
 }
