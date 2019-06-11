@@ -140,6 +140,7 @@ var foodConfig = {
 
 var playerConfig = {
     border: 6,
+    borderColor: '#333333',
     textColor: '#FFFFFF',
     textBorder: '#000000',
     textBorderSize: 3,
