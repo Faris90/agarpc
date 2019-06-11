@@ -70,8 +70,8 @@ gulp.task('run', ['build'], function () {
         args: ["config.json"],
         ext: 'html js css'
     })
-    .on('restart', function () {
-        util.log('server restarted!');
+    .on('crash', function () {
+        process.exit();
     });
 });
 
