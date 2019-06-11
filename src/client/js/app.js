@@ -230,7 +230,7 @@ function setupSocket(socket) {
         }
         c.focus();
         
-        $('#botp').html('<br/><br/><br/><span style="font-size:1.5vw;font-style:italic;">TIP: you can press \'CTRL\' and \'-\' to zoom out.</span>');
+        $('#botp').html('<br/><br/><br/><br/><br/><span style="font-size:1vw;">TIP: you can press \'CTRL\' and \'-\' to zoom out.</span>');
         document.getElementById('msgshow').style.visibility = 'visible';
         setTimeout(function(){
             document.getElementById('msgshow').style.visibility = 'hidden';
