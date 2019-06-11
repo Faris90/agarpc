@@ -167,7 +167,7 @@ div {
 }
 
 #playerNameInput {
-    width: 62%;
+    width: 100%;
     text-align: left;
     padding: 0.6vw;
     border: 0.05vw solid #333;
