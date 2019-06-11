@@ -25,12 +25,13 @@ function getDomain(){
     return '';
 }
 var cdomain = getDomain();
-
-if(window.location.host.split('.a')[0].length == 1){
+/*
+if(window.location.host.split('')[0].length == 1){
     document.getElementById("server").value = window.location.host.split('.a')[0];
 } else {
     document.getElementById("server").value = '0';
 }
+*/
 
 var debug = function(args) {
     if (console && console.log) {
@@ -270,12 +271,14 @@ function setupSocket(socket) {
                     status += (i + 1) + '. An unnamed cell';
             }
         }
+        /*
         if(window.location.host.split('.aga')[0].length == 1){
             status += '<hr/><b style="font-size: 1.2vw;">Server ' + window.location.host.split('.aga')[0] + '</b>';
         } else {
             status += '<hr/><b style="font-size: 1.2vw;">Server 0</b>';
         }
-        status += '<br/>Players: ' + data.players;
+        */
+        status += '<hr/>Players: ' + data.players;
         status += '<br/>Mass: ' + player.massTotal;
         document.getElementById('status').innerHTML = status;
     });
@@ -704,6 +707,7 @@ function resize() {
     socket.emit('windowResized', { screenWidth: global.screenWidth, screenHeight: global.screenHeight });
 }
 
+/*
 document.getElementById('server').onchange = function(){
     if(document.getElementById('server').value == '0'){
         window.location = 'http://' + cdomain;
@@ -711,7 +715,9 @@ document.getElementById('server').onchange = function(){
         window.location = 'http://' + document.getElementById('server').value + '.' + cdomain;
     }
 };
+*/
 
+/*
 function updateplaycount(){
     if(cdomain){
         var xmlhttp = new XMLHttpRequest();
@@ -759,3 +765,4 @@ function updateplaycount(){
 }
 updateplaycount();
 setInterval(updateplaycount, 7500);
+*/
