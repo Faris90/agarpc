@@ -244,7 +244,7 @@ function setupSocket(socket) {
     });
 
     socket.on('playerDied', function (data) {
-        window.chat.addSystemLine('<b>' + (data.name.length < 1 ? 'An unnamed cell' : data.name) + '</b> oofed.');
+        window.chat.addSystemLine('<b>' + (data.name.length < 1 ? 'An unnamed cell' : data.name) + '</b> died.');
     });
 
     socket.on('playerDisconnect', function (data) {
@@ -624,7 +624,7 @@ function gameLoop() {
         graph.textAlign = 'center';
         graph.fillStyle = '#CCCCCC';
         graph.font = '42px Roboto';
-        graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
+        //graph.drawImage(oofgraphic,global.screenWidth - oofgraphic.width, global.screenHeight - oofgraphic.height);
         graph.fillText('You died!', global.screenWidth / 2, global.screenHeight / 2);
         document.getElementById('chatbox').style.display = 'none';
         window.cancelAnimationFrame(global.animLoopHandle);
