@@ -1,3 +1,5 @@
 blobgame
 =============
-snazzy
+**Play now!**
+
+http://agar.rocks
