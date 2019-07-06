@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "build": "gulp build",
-    "start": "sudo pm2 start ecosystem.config.js",
+    "start": "node src/server/server.js",
     "watch": "gulp watch",
     "test": "gulp test"
   },
